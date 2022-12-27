@@ -25,9 +25,9 @@ class ProductRequest extends FormRequest
     {
         return [
 
-                'product.title'=>'required|string',
+                'product.title'=>'required|string|unique:products,title',
                 'product.price'=>'required|int',
-                'product.publish_date'=>'required|date'
+                'product.publish_date'=>'required|date|after:today'
 
         ];
     }

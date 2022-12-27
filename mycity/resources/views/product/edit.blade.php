@@ -46,7 +46,8 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="{{ url()->previous() }}" class="btn btn-secondary">Indietro</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-dark">Indietro</a>
+                    <a href="{{ route('products.index') }}" class="btn btn-primary">Home</a>
                 </div>
 
             </div>

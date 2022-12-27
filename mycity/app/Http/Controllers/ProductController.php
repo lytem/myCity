@@ -11,7 +11,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $items=Product::latest()->get();
+        $items=Product::latest()->paginate(3);
 
         return view("product.index",compact("items"));
     }
@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request, Product $product)
     {
         $product=Product::create($request->input('product'));
-        return redirect()->route('products.index')->with('message','creato correctement');
+        return redirect()->route('products.index')->with('message','product successfully created');
     }
 
     public function show(Product $product)
@@ -41,12 +41,12 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $product->update($request->input('product'));
-        return redirect()->route('products.index')->with('message','update correctement');
+        return redirect()->route('products.index')->with('message','product successfully updated');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('products.index')->with('message','delete correctement');
+        return redirect()->route('products.index')->with('message','Product successfully deleted');
     }
 }

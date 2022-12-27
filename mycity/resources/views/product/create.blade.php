@@ -11,7 +11,7 @@
                    <h2>New Product</h2>
                 </div>
                 <div class="float-right"><button class="btn btn-success"><i class="fa fa-floppy-o"
-                            aria-hidden="true"></i></button></div>
+                            aria-hidden="true"> Save</i></button></div>
 
             </div>
 
@@ -46,8 +46,12 @@
             </div>
 
             <div class="card-footer">
-                <a href="{{ url()->previous() }}" class="btn btn-secondary">Indietro</a>
+                <a href="{{ url()->previous() }}" class="btn btn-dark">Indietro</a>
+                <a href="{{ route('products.index') }}" class="btn btn-primaty">Home</a>
             </div>
+
+
+
 
         </div>
 

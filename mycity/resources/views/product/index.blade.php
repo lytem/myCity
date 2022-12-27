@@ -3,11 +3,11 @@
     <div class="container">
         @include('components.validation')
         <div class="card">
-            <div class="card">
+
                 <div class="card-header">
                     <div class="float-left"><h2>{{ __('Products list') }}</h2></div>
                     <div class="float-right">
-                        <a href="{{ route('products.create') }}" class="btn btn-secondary"><i class="fa fa-plus"></i></a>
+                        <a href="{{ route('products.create') }}" class="btn btn-success btn-sm"><i class="fa fa-plus"></i></a>
 
                     </div>
                 </div>
@@ -48,7 +48,12 @@
 
                     </table>
                 </div>
-            </div>
+
+
+                <div class="card-footer">
+                    {!! $items->links() !!}
+                </div>
+
         </div>
     </div>
 @endsection
