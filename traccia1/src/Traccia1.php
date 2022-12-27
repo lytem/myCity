@@ -13,14 +13,11 @@ function multiply($inputArray)
         
     for ($i = 0; $i < $inputArraySize; $i++) {
         $product = 1;
-        for ($j = 0; $j < $inputArraySize; $j++) {
-            if ($i != $j) {
-                $product = $product * $inputArray[$j];
-            }
-            if ($j == $inputArraySize - 1) {
-                array_push($outputArray, $product);
-            }
-        }
+        $inputArrayCopy=$inputArray; // copy array original
+        array_splice($inputArrayCopy,$i,1); // remove element position i
+        $product=array_product($inputArrayCopy); // multiply element array 
+        array_push($outputArray,$product);
+      
     }
     return $outputArray;
 }
