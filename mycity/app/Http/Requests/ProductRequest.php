@@ -25,9 +25,9 @@ class ProductRequest extends FormRequest
     {
         return [
 
-                'product.title'=>'required|string|unique:products,title',
+                'product.title'=>"required|string|unique:products,title",
                 'product.price'=>'required|int',
-                'product.publish_date'=>'required|date|after:today'
+                'product.publish_date'=>'required|date|after:yesterday'
 
         ];
     }
@@ -42,9 +42,9 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'product.title.required'=>'il titolo è obbligatorio',
-            'product.price'=>'Price',
-            'product.publish_date'=>'Publish date'
+            'product.title.required'=>'il Titolo è obbligatorio',
+            'product.price.required'=>'il Prezzo è obbligatorio ',
+            'product.publish_date.required'=>'la Data di pubblicazione è obbligatoria'
         ];
     }
 }

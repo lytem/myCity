@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
 
         <form action="{{ route('products.store') }}" method="post">
          @csrf
@@ -47,7 +47,7 @@
 
             <div class="card-footer">
                 <a href="{{ url()->previous() }}" class="btn btn-dark">Indietro</a>
-                <a href="{{ route('products.index') }}" class="btn btn-primaty">Home</a>
+                <a href="{{ route('products.index') }}" class="btn btn-primary">Home</a>
             </div>
 
 

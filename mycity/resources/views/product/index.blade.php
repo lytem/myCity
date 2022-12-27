@@ -15,20 +15,20 @@
                 <div class="card-body">
                     <table class="table table-hover">
 
-                        <thead class="table table-dark">
-                            <th>Title</th>
-                            <th>Price</th>
-                            <th>Publish Date</th>
-                            <th>created at</th>
+                        <thead class="table table-secondary">
+                            <th class="col-4">Title</th>
+                            <th class="col-2">Price</th>
+                            <th class="col-2">Publish Date</th>
+                            <th class="col-2">Created at</th>
                             <th>&nbsp;</th>
                         </thead>
                         <tbody>
                             @foreach ($items as $item)
                                 <tr>
-                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->getFullTitleAttributes() }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td>{{ $item->publish_date }}</td>
-                                   <td> {{ $item->created_at->diffForHumans() }}</td>
+                                   <td> <span class="badge badge-success">{{ $item->created_at->diffForHumans() }}</span></td>
                                     <td class="text-right">
                                         {{-- edit --}}
                                         <a href="{{ route('products.edit', $item->id) }}" class="btn btn-secondary"><i

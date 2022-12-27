@@ -10,4 +10,10 @@ class Product extends Model
 {
     use HasFactory,SoftDeletes;
     protected $fillable=["title","price","publish_date"];
+
+
+    public function getFullTitleAttributes(){
+
+        return trim(ucfirst($this->title));
+    }
 }

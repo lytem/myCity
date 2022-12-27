@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <form action="{{ route('products.update', $product->id) }}" method="post">
             @csrf
             @method('PUT')
@@ -8,10 +8,10 @@
 
                 <div class="card-header">
                     <div class="float-left">
-                        <h4>Edit: {{ $product->title }}</h4>
+                        <h4>Edit product: <b> {{ $product->title }}</b></h4>
                     </div>
                     <div class="float-right"><button class="btn btn-success"><i class="fa fa-floppy-o"
-                                aria-hidden="true"></i></button></div>
+                                aria-hidden="true"> Save </i></button></div>
 
                 </div>
 
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <a href="{{ url()->previous() }}" class="btn btn-dark">Indietro</a>
+
                     <a href="{{ route('products.index') }}" class="btn btn-primary">Home</a>
                 </div>
 
