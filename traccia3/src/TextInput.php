@@ -3,7 +3,7 @@ namespace TextInput;
 
 class TextInput{
 
-    protected $buffer;
+    protected $buffer;// variabile di classe
 
     function __construct(){
         $this->buffer="";

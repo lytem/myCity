@@ -11,9 +11,9 @@ function multiply($inputArray)
       throw new InvalidArgumentException("The array cannot be empty");                  
     }
         
-    for ($i = 0; $i < $inputArraySize; $i++) {
-        $product = 1;
-        for ($j = 0; $j < $inputArraySize; $j++) {
+    for ($i = 0; $i < $inputArraySize; $i++) { // i posizione corrente
+        $product = 1; // initialise prodotto 
+        for ($j = 0; $j < $inputArraySize; $j++) {// j altre posizioni
             if ($i != $j) {
                 $product = $product * $inputArray[$j];
             }

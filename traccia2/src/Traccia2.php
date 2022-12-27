@@ -10,11 +10,7 @@ function uniqueNames($array1,$array2){
         throw new InvalidArgumentException("Array cannot be null");
         
      }
-
-
-    foreach ($array1 as $value1) {
-     array_push($output,$value1);
-    }
+     $output=$array1;// initialise output with array1
     foreach ($array2 as $value2) {
         $ispresent=false;
         foreach ($output as  $value) {
