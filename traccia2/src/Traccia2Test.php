@@ -7,13 +7,16 @@ final class Traccia2Test extends TestCase
 {
     public function testTraccia2(): void
     {
-        $array1 = array("eliane","nicolas");
+        $array1 = array("eliane","nicolas","pierre");
         $array2 = array("nicolas","eric");
-        $outputExpected=array("eliane","nicolas","eric");
+        
+        $outputExpected=array("eliane","nicolas","eric","pierre");
         $outputActuel=uniqueNames($array1,$array2);
-
-        $this->assertSame($outputExpected,$outputActuel);
     
+        $this->assertCount(count($outputExpected),$outputActuel);
+        foreach ($outputExpected as $value) {
+            $this->assertContains($value,$outputActuel);
+        }  
     }
     public function testUniqNamesRejectArray1Null(): void
     {
