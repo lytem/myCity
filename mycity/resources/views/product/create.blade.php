@@ -28,7 +28,7 @@
                     </div>
                     <div class="mt-4">
                         <label class="required mb-2">Price</label>
-                        <input type="number" name="product[price]" value="{{ old('product.price') }}" min="0" step="any"
+                        <input type="number" name="product[price]" value="{{ old('product.price') }}" min="0.00" step="any"
                             class="form-control @error('product.price') is-invalid @enderror" placeholder="Price" />
                          @error('product.price')
                       <span class="text-danger">{{ $errors->first('product.price') }}</span>

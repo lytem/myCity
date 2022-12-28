@@ -26,10 +26,14 @@
                             @foreach ($items as $item)
                                 <tr>
                                     <td>{{ $item->getFullTitleAttributes() }}</td>
-                                    <td>{{ $item->price }}</td>
+                                    <td>{{number_format($item->price,2)  }} € </td>
                                     <td>{{ $item->publish_date }}</td>
                                    <td> <span class="badge badge-success">{{ $item->created_at->diffForHumans() }}</span></td>
                                     <td class="text-right">
+                                        {{-- Show --}}
+                                        <a href="{{ route('products.show', $item->id) }}" class="btn btn-primary"><i
+                                            class="fa fa-eye"></i></a>
+
                                         {{-- edit --}}
                                         <a href="{{ route('products.edit', $item->id) }}" class="btn btn-secondary"><i
                                                 class="fa fa-pencil"></i></a>

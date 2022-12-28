@@ -16,4 +16,5 @@ class Product extends Model
 
         return trim(ucfirst($this->title));
     }
+
 }

@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
 
                 'product.title'=>"required|string|unique:products,title",
-                'product.price'=>'required|int',
+                'product.price'=>'required|max:10',
                 'product.publish_date'=>'required|date|after:yesterday'
 
         ];
@@ -44,6 +44,7 @@ class ProductRequest extends FormRequest
         return [
             'product.title.required'=>'il Titolo è obbligatorio',
             'product.price.required'=>'il Prezzo è obbligatorio ',
+            'product.price.max'=>"Chiffra fuori range massimo 10 numeri",
             'product.publish_date.required'=>'la Data di pubblicazione è obbligatoria'
         ];
     }
